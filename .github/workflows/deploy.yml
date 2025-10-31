@@ -19,7 +19,7 @@ jobs:
           echo "Création de l'archive tar.gz..."
           tar -czf site_static.tar.gz -C site_static .
 
-      - name: Upload site archive via SCP
+      - name: Upload site archive via SCP to /home/freebox/tmp
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -27,9 +27,12 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 2222
           source: "site_static.tar.gz"
-          target: "/opt/docker/sacs"
+          target: "/home/freebox/tmp"
+          overwrite: true
+          rm: false
+          debug: true
 
-      - name: Extract archive and deploy on Freebox
+      - name: Deploy archive to /opt/docker/sacs/html
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -37,16 +40,16 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 2222
           script: |
-            echo "Nettoyage du dossier cible..."
+            echo "Nettoyage et déploiement..."
             sudo rm -rf /opt/docker/sacs/html
             sudo mkdir -p /opt/docker/sacs/html
             sudo chown -R $USER:$USER /opt/docker/sacs/html
             sudo chmod -R 755 /opt/docker/sacs/html
 
-            echo "Extraction de l'archive..."
-            cd /opt/docker/sacs
-            tar -xzf site_static.tar.gz -C html
-            rm site_static.tar.gz
+            echo "Décompression de l'archive..."
+            tar -xzf /home/freebox/tmp/site_static.tar.gz -C /opt/docker/sacs/html
+            rm /home/freebox/tmp/site_static.tar.gz
 
             echo "Redémarrage du conteneur Nginx (sacs)..."
+            cd /opt/docker/sacs
             docker compose restart sacs
