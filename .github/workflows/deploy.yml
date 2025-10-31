@@ -14,12 +14,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create tar archive
+      - name: Create site archive
         run: |
-          echo "Création de l'archive tar.gz..."
+          echo "Creating compressed tar archive..."
           tar -czf site_static.tar.gz -C site_static .
 
-      - name: Upload archive via SCP to Freebox tmp
+      - name: Upload archive to Freebox /tmp
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -32,7 +32,7 @@ jobs:
           rm: false
           debug: true
 
-      - name: Deploy and restart Nginx
+      - name: Deploy site and restart Nginx container
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -40,15 +40,17 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 2222
           script: |
-            echo "Nettoyage du dossier html..."
+            echo "[4sacs] Cleaning target directory..."
             sudo rm -rf /opt/docker/sacs/html
             sudo mkdir -p /opt/docker/sacs/html
             sudo chown -R $USER:$USER /opt/docker/sacs/html
             sudo chmod -R 755 /opt/docker/sacs/html
 
-            echo "Extraction de l'archive..."
+            echo "[4sacs] Extracting new content..."
             tar -xzf /home/freebox/tmp/site_static.tar.gz -C /opt/docker/sacs/html
             rm /home/freebox/tmp/site_static.tar.gz
 
-            echo "Redémarrage du conteneur Nginx (sacs)..."
+            echo "[4sacs] Restarting Nginx container..."
             sudo docker compose -f /opt/docker/sacs/docker-compose.yml restart sacs
+
+            echo "[4sacs] Deployment complete."
