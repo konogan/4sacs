@@ -2,21 +2,24 @@
 
 ## Présentation
 
-**4sacs** est un générateur de site statique écrit en **Python**, conçu pour transformer des articles rédigés en **Markdown** en un site HTML complet, propre et rapide à héberger (par exemple sur un serveur Nginx, une Freebox, ou GitHub Pages).
+**4sacs** est un générateur de site statique écrit en **Python**, conçu pour transformer des articles rédigés en **Markdown** en un site HTML complet, clair et rapide à héberger (par exemple sur un serveur Nginx, une Freebox, ou GitHub Pages).
+
+Le projet permet désormais d’écrire et de gérer les articles **directement en Markdown**, sans base de données SQL, tout en conservant la structure, la navigation et les fonctionnalités de l’ancien site WordPress.
 
 ---
 
 ## Objectif
 
-- Écrire des articles de voyage en Markdown
-- Structurer les catégories et les images simplement
+- Écrire des articles de voyage en Markdown.
+- Structurer les catégories et les images simplement.
 - Générer un site complet avec :
-  - Pages d’articles
-  - Index de catégories
-  - Pages de tags
-  - Navigation précédente/suivante
-  - Menu du jour, géolocalisation, etc.
-- Respecter une hiérarchie lisible dans les URLs :
+  - Pages d’articles.
+  - Index de catégories.
+  - Pages de tags.
+  - Navigation précédente / suivante.
+  - Menu du jour et géolocalisation.
+- Produire une hiérarchie d’URL lisible :
+
   ```
   /categorie/index.html
   /categorie/2024-07-13-mysore.html
@@ -50,7 +53,7 @@
 │   │
 │   └── ...
 │
-├── site_static/              # Dossier de sortie généré automatiquement
+├── site_static/              # Dossier généré automatiquement
 │   ├── static/               # Copie automatique de `assets/`
 │   ├── inde/
 │   │   ├── index.html
@@ -101,7 +104,7 @@ Nous avons visité le marché, puis le fort en fin d’après-midi.
 | `title` | string | Titre de l’article |
 | `date` | string (YYYY-MM-DD) | Date de publication |
 | `author` | string | Nom de l’auteur |
-| `categories` | list | Catégories principales (première = dossier) |
+| `categories` | list | Catégories principales (la première = dossier) |
 | `tags` | list | Mots-clés pour indexation |
 | `lat`, `lng` | float | Coordonnées géographiques |
 | `menu` | list | “Menu du jour” affiché dans la colonne latérale |
@@ -132,43 +135,51 @@ beautifulsoup4
 
 ### Lancer la génération
 
-Depuis la racine du projet :
+#### Mode par défaut (incrémental)
+
+Génère uniquement les articles modifiés ou nouveaux :
 
 ```bash
 python3 generate_site_from_md.py
 ```
 
-Ce script :
+#### Mode complet
 
-1. Vide complètement le dossier `site_static/`
-2. Copie le contenu de `assets/` dans `site_static/static/`
-3. Parcourt `content/` pour :
-   - Générer une page HTML pour chaque article
-   - Créer un index dans chaque catégorie
-   - Créer un dossier `tags/` avec :
-     - Une page par tag regroupant les articles
-     - Un index global des tags
-   - Générer un `index.html` racine listant les catégories
+Force la régénération de tout le site :
+
+```bash
+python3 generate_site_from_md.py --full
+```
+
+---
+
+### Fonctionnement du mode incrémental
+
+Le générateur conserve un cache (`.build_cache.json`) contenant le hash de chaque fichier Markdown.  
+Lors du prochain lancement :
+- Les fichiers non modifiés sont ignorés.
+- Les fichiers supprimés sont retirés du site.
+- Les nouveaux fichiers sont ajoutés automatiquement.
+
+Cela permet des reconstructions beaucoup plus rapides.
 
 ---
 
 ### Résultat
 
-Le site complet est dans le dossier :
+Le site complet est généré dans :
 
 ```
 site_static/
 ```
 
-Tu peux le prévisualiser localement :
+Prévisualisation locale :
 
 ```bash
 python3 -m http.server --directory site_static
 ```
 
-et accéder à :
-
-👉 http://localhost:8000
+Puis ouvrir : [http://localhost:8000](http://localhost:8000)
 
 ---
 
@@ -176,7 +187,7 @@ et accéder à :
 
 - Chaque dossier dans `content/` correspond à une **catégorie**.
 - Chaque `.md` correspond à un article.
-- Les images doivent être dans `content/<categorie>/images/`.
+- Les images doivent être placées dans `content/<categorie>/images/`.
 - Le script copie automatiquement ces images dans `site_static/<categorie>/images/`.
 - Les tags sont regroupés dans `site_static/tags/<tag>/index.html`.
 
@@ -185,21 +196,23 @@ et accéder à :
 ## Accessibilité et SEO
 
 Le générateur applique automatiquement :
-- Des attributs `alt` pour toutes les images (nom de fichier si manquant)
-- Des rôles ARIA cohérents (`role="main"`, `role="navigation"`, etc.)
-- Une structure sémantique claire (`<article>`, `<header>`, `<footer>`, `<aside>`)
+- Un attribut `alt` à chaque image (nom de fichier si manquant).
+- Des rôles ARIA cohérents (`role="main"`, `role="navigation"`, `role="contentinfo"`...).
+- Une structure sémantique claire : `<article>`, `<header>`, `<footer>`, `<aside>`.
 
 ---
 
 ## À venir
 
-- Génération d’une carte interactive à partir des coordonnées (`lat`/`lng`)
-- Thèmes CSS alternatifs
-- Pagination et flux RSS
+- Génération d’une carte interactive à partir des coordonnées (`lat` / `lng`).
+- Thèmes CSS alternatifs.
+- Pagination et flux RSS.
+- Support de génération partielle par tag ou catégorie.
+- Option de déploiement automatisé.
 
 ---
 
 ## Auteur
 
 **Konogan**  
-© 2025  
+© 2025
