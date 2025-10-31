@@ -1,4 +1,4 @@
-name: Deploy 4sacs.fr to Freebox (optimized tar)
+name: Deploy 4sacs.fr to Freebox (tar optimized)
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
           echo "Création de l'archive tar.gz..."
           tar -czf site_static.tar.gz -C site_static .
 
-      - name: Upload site archive via SCP to /home/freebox/tmp
+      - name: Upload archive via SCP to Freebox tmp
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -32,7 +32,7 @@ jobs:
           rm: false
           debug: true
 
-      - name: Deploy archive to /opt/docker/sacs/html
+      - name: Deploy and restart Nginx
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -40,13 +40,13 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 2222
           script: |
-            echo "Nettoyage et déploiement..."
+            echo "Nettoyage du dossier html..."
             sudo rm -rf /opt/docker/sacs/html
             sudo mkdir -p /opt/docker/sacs/html
             sudo chown -R $USER:$USER /opt/docker/sacs/html
             sudo chmod -R 755 /opt/docker/sacs/html
 
-            echo "Décompression de l'archive..."
+            echo "Extraction de l'archive..."
             tar -xzf /home/freebox/tmp/site_static.tar.gz -C /opt/docker/sacs/html
             rm /home/freebox/tmp/site_static.tar.gz
 
