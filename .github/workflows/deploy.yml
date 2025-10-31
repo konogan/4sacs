@@ -51,5 +51,4 @@ jobs:
             rm /home/freebox/tmp/site_static.tar.gz
 
             echo "Redémarrage du conteneur Nginx (sacs)..."
-            cd /opt/docker/sacs
-            docker compose restart sacs
+            sudo docker compose -f /opt/docker/sacs/docker-compose.yml restart sacs
