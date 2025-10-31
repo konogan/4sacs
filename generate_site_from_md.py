@@ -11,7 +11,7 @@ from collections import defaultdict
 import glob
 from dotenv import load_dotenv
 
-# Charger les variables du fichier .env s'il existe
+# Charger les variables d’environnement (.env)
 load_dotenv()
 
 # === CONFIGURATION ===
@@ -32,9 +32,11 @@ def slugify(text):
     text = re.sub(r"[\s-]+", "-", text)
     return text.strip("-")
 
+
 def file_hash(path):
     with open(path, "rb") as f:
         return hashlib.md5(f.read()).hexdigest()
+
 
 def load_cache():
     if os.path.exists(CACHE_FILE):
@@ -42,9 +44,11 @@ def load_cache():
             return json.load(f)
     return {}
 
+
 def save_cache(data):
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+
 
 def load_markdown_article(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -61,7 +65,7 @@ def load_markdown_article(path):
     body_html = markdown.markdown(body_md, extensions=["extra", "smarty", "sane_lists"])
     soup = BeautifulSoup(body_html, "html.parser")
 
-    # Ajouter alt et role="img"
+    # Ajoute alt et role="img" aux images
     for img in soup.find_all("img"):
         if not img.get("alt"):
             src = img.get("src", "")
@@ -70,12 +74,15 @@ def load_markdown_article(path):
 
     return meta, str(soup)
 
+
 def copy_static_assets():
+    """Copie tout le contenu de assets/ vers site_static/static/"""
     static_dir = os.path.join(OUTPUT_DIR, "static")
     if os.path.exists(static_dir):
         shutil.rmtree(static_dir)
     shutil.copytree(ASSETS_DIR, static_dir)
     print("Dossier static mis à jour.")
+
 
 def copy_category_images(category_dir, cat_output_dir):
     src_img_dir = os.path.join(category_dir, "images")
@@ -83,8 +90,18 @@ def copy_category_images(category_dir, cat_output_dir):
     if os.path.exists(src_img_dir):
         shutil.copytree(src_img_dir, dst_img_dir, dirs_exist_ok=True)
 
+
+def get_favicon_html():
+    """Retourne les balises favicon communes à toutes les pages"""
+    favicon_path = "static/4sacs.png"
+    return f"""
+  <link rel="icon" type="image/png" href="/{favicon_path}">
+  <link rel="shortcut icon" type="image/png" href="/{favicon_path}">
+"""
+
+
 def get_ga_script():
-    """Return Google Analytics 4 tracking code if enabled."""
+    """Retourne le script Google Analytics (si activé)."""
     if not ENABLE_ANALYTICS or not GA_TRACKING_ID or GA_TRACKING_ID.startswith("G-XXXX"):
         return ""
     return f"""
@@ -96,6 +113,7 @@ def get_ga_script():
     gtag('js', new Date());
     gtag('config', '{GA_TRACKING_ID}');
   </script>"""
+
 
 def render_article(meta, content_html, categories_map):
     title = meta.get("title", "Sans titre")
@@ -146,6 +164,7 @@ def render_article(meta, content_html, categories_map):
   <meta charset="utf-8">
   <title>{title}</title>
   <link rel="stylesheet" href="../{CSS_URL}">
+  {get_favicon_html()}
   {get_ga_script()}
 </head>
 <body>
@@ -218,11 +237,11 @@ def main():
                 os.remove(old_data["output"])
                 print(f"Supprimé : {old_data['output']}")
 
-    # Tri des articles
+    # Tri chronologique des articles
     for c in categories_map:
         categories_map[c].sort(key=lambda x: x.get("date", ""))
 
-    # Index de catégories
+    # --- Index de catégories ---
     for cat, items in categories_map.items():
         cat_slug = slugify(cat)
         cat_output_dir = os.path.join(OUTPUT_DIR, cat_slug)
@@ -233,9 +252,10 @@ def main():
         html = f"""<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8"><title>{cat}</title>
-    <link rel="stylesheet" href="../{CSS_URL}">
-    {get_ga_script()}
+  <meta charset="utf-8"><title>{cat}</title>
+  <link rel="stylesheet" href="../{CSS_URL}">
+  {get_favicon_html()}
+  {get_ga_script()}
 </head>
 <body>
   <article><header><h1><span class='cat'><a href="../index.html">{SITE_TITLE}</a></span> / {cat}</h1></header>
@@ -246,7 +266,7 @@ def main():
         with open(os.path.join(cat_output_dir, "index.html"), "w", encoding="utf-8") as f:
             f.write(html)
 
-    # Tags
+    # --- Pages de tags individuelles ---
     tags_root = os.path.join(OUTPUT_DIR, "tags")
     os.makedirs(tags_root, exist_ok=True)
     for tag, items in sorted(tags_map.items()):
@@ -267,9 +287,10 @@ def main():
         html = f"""<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8"><title>#{tag}</title>
-    <link rel="stylesheet" href="../../{CSS_URL}">
-    {get_ga_script()}
+  <meta charset="utf-8"><title>#{tag}</title>
+  <link rel="stylesheet" href="../../{CSS_URL}">
+  {get_favicon_html()}
+  {get_ga_script()}
 </head>
 <body>
   <article><header><h1><span class='cat'><a href="../index.html">{SITE_TITLE}</a></span> / #{tag}</h1></header>
@@ -279,7 +300,34 @@ def main():
         with open(os.path.join(tag_dir, "index.html"), "w", encoding="utf-8") as f:
             f.write(html)
 
-    # Index principal
+    # --- Page index des tags (nuage trié par fréquence) ---
+    sorted_tags = sorted(tags_map.items(), key=lambda kv: len(kv[1]), reverse=True)
+    tags_blocks = "\n".join(
+        f"<a href='{slugify(tag)}/' class='tag-cloud' aria-label='Tag {tag}'>#{tag}</a>"
+        f"<span class='count'>({len(items)})</span>"
+        for tag, items in sorted_tags
+    )
+
+    html_tags = f"""<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Tags</title>
+  <link rel="stylesheet" href="../{CSS_URL}">
+  {get_favicon_html()}
+  {get_ga_script()}
+</head>
+<body>
+  <article>
+    <header><h1><span class='cat'><a href="../index.html">{SITE_TITLE}</a></span> / Tags</h1></header>
+    <main><div class="tags-cloud">{tags_blocks}</div></main>
+    <footer><p><a href="../index.html">← Retour aux catégories</a></p></footer>
+  </article>
+</body></html>"""
+    with open(os.path.join(tags_root, "index.html"), "w", encoding="utf-8") as f:
+        f.write(html_tags)
+
+    # --- Index principal ---
     index_html = "\n".join(
         f"<li><a href='{slugify(c)}/'>{c}</a> ({len(items)} articles)</li>"
         for c, items in sorted(categories_map.items(), key=lambda kv: kv[1][0].get("date", ""))
@@ -287,9 +335,10 @@ def main():
     html_index = f"""<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8"><title>{SITE_TITLE}</title>
-    <link rel="stylesheet" href="{CSS_URL}">
-    {get_ga_script()}
+  <meta charset="utf-8"><title>{SITE_TITLE}</title>
+  <link rel="stylesheet" href="{CSS_URL}">
+  {get_favicon_html()}
+  {get_ga_script()}
 </head>
 <body>
   <article><header><h1>{SITE_TITLE}</h1></header>
