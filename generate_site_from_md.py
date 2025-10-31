@@ -9,6 +9,10 @@ import hashlib
 from bs4 import BeautifulSoup
 from collections import defaultdict
 import glob
+from dotenv import load_dotenv
+
+# Charger les variables du fichier .env s'il existe
+load_dotenv()
 
 # === CONFIGURATION ===
 CONTENT_DIR = "content"
@@ -17,6 +21,8 @@ ASSETS_DIR = "assets"
 CSS_URL = "static/style.css"
 SITE_TITLE = "4sacs"
 CACHE_FILE = ".build_cache.json"
+GA_TRACKING_ID = os.getenv("GA_TRACKING_ID", "")
+ENABLE_ANALYTICS = os.getenv("ENABLE_ANALYTICS", "true").lower() == "true"
 
 
 # --- UTILS ---
@@ -77,6 +83,20 @@ def copy_category_images(category_dir, cat_output_dir):
     if os.path.exists(src_img_dir):
         shutil.copytree(src_img_dir, dst_img_dir, dirs_exist_ok=True)
 
+def get_ga_script():
+    """Return Google Analytics 4 tracking code if enabled."""
+    if not ENABLE_ANALYTICS or not GA_TRACKING_ID or GA_TRACKING_ID.startswith("G-XXXX"):
+        return ""
+    return f"""
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={GA_TRACKING_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', '{GA_TRACKING_ID}');
+  </script>"""
+
 def render_article(meta, content_html, categories_map):
     title = meta.get("title", "Sans titre")
     date = meta.get("date", "")
@@ -126,6 +146,7 @@ def render_article(meta, content_html, categories_map):
   <meta charset="utf-8">
   <title>{title}</title>
   <link rel="stylesheet" href="../{CSS_URL}">
+  {get_ga_script()}
 </head>
 <body>
   <article data-lat="{lat or ''}" data-lng="{lng or ''}" aria-labelledby="article-title">
@@ -211,13 +232,17 @@ def main():
         )
         html = f"""<!DOCTYPE html>
 <html lang="fr">
-<head><meta charset="utf-8"><title>{cat}</title>
-<link rel="stylesheet" href="../{CSS_URL}"></head>
+<head>
+    <meta charset="utf-8"><title>{cat}</title>
+    <link rel="stylesheet" href="../{CSS_URL}">
+    {get_ga_script()}
+</head>
 <body>
   <article><header><h1><span class='cat'><a href="../index.html">{SITE_TITLE}</a></span> / {cat}</h1></header>
   <main><ul>{items_html}</ul></main>
   <footer><p><a href="../index.html">← Retour</a></p></footer></article>
-</body></html>"""
+</body>
+</html>"""
         with open(os.path.join(cat_output_dir, "index.html"), "w", encoding="utf-8") as f:
             f.write(html)
 
@@ -241,8 +266,11 @@ def main():
             blocks.append(cat_html)
         html = f"""<!DOCTYPE html>
 <html lang="fr">
-<head><meta charset="utf-8"><title>#{tag}</title>
-<link rel="stylesheet" href="../../{CSS_URL}"></head>
+<head>
+    <meta charset="utf-8"><title>#{tag}</title>
+    <link rel="stylesheet" href="../../{CSS_URL}">
+    {get_ga_script()}
+</head>
 <body>
   <article><header><h1><span class='cat'><a href="../index.html">{SITE_TITLE}</a></span> / #{tag}</h1></header>
   <main>{''.join(blocks)}</main>
@@ -257,13 +285,18 @@ def main():
         for c, items in sorted(categories_map.items(), key=lambda kv: kv[1][0].get("date", ""))
     )
     html_index = f"""<!DOCTYPE html>
-<html lang="fr"><head><meta charset="utf-8"><title>{SITE_TITLE}</title>
-<link rel="stylesheet" href="{CSS_URL}"></head>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"><title>{SITE_TITLE}</title>
+    <link rel="stylesheet" href="{CSS_URL}">
+    {get_ga_script()}
+</head>
 <body>
   <article><header><h1>{SITE_TITLE}</h1></header>
   <main><ul>{index_html}</ul></main>
   <footer><p><a href="tags/">Voir les tags →</a></p></footer></article>
-</body></html>"""
+</body>
+</html>"""
     with open(os.path.join(OUTPUT_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(html_index)
 
