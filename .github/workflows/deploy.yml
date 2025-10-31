@@ -1,4 +1,4 @@
-name: Deploy 4sacs to Freebox
+name: Deploy 4sacs.fr to Freebox (optimized tar)
 
 on:
   push:
@@ -14,34 +14,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Clean and prepare target folder
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          port: 2222
-          script: |
-            sudo rm -rf /opt/docker/konogan/html/4sacs
-            sudo mkdir -p /opt/docker/konogan/html/4sacs
-            sudo chown -R $USER:$USER /opt/docker/konogan/html/4sacs
-            sudo chmod -R 755 /opt/docker/konogan/html/4sacs
+      - name: Create tar archive
+        run: |
+          echo "Création de l'archive tar.gz..."
+          tar -czf site_static.tar.gz -C site_static .
 
-      - name: Deploy site_static via SCP
+      - name: Upload site archive via SCP
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           port: 2222
-          source: "site_static/."
-          target: "/opt/docker/konogan/html/4sacs"
-          overwrite: true
-          rm: false
-          strip_components: 0
-          debug: true
+          source: "site_static.tar.gz"
+          target: "/opt/docker/sacs"
 
-      - name: Reload Nginx container
+      - name: Extract archive and deploy on Freebox
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -49,5 +37,16 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 2222
           script: |
-            cd /opt/docker/konogan
-            docker compose restart konogan
+            echo "Nettoyage du dossier cible..."
+            sudo rm -rf /opt/docker/sacs/html
+            sudo mkdir -p /opt/docker/sacs/html
+            sudo chown -R $USER:$USER /opt/docker/sacs/html
+            sudo chmod -R 755 /opt/docker/sacs/html
+
+            echo "Extraction de l'archive..."
+            cd /opt/docker/sacs
+            tar -xzf site_static.tar.gz -C html
+            rm site_static.tar.gz
+
+            echo "Redémarrage du conteneur Nginx (sacs)..."
+            docker compose restart sacs
