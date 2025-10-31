@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           port: 2222
-          source: "site_static/*"
+          source: "site_static/."
           target: "/opt/docker/konogan/html/4sacs"
           overwrite: true
           rm: false
