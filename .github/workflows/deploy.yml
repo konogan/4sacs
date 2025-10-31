@@ -1,0 +1,53 @@
+name: Deploy 4sacs to Freebox
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Clean and prepare target folder
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 2222
+          script: |
+            sudo rm -rf /opt/docker/konogan/html/4sacs
+            sudo mkdir -p /opt/docker/konogan/html/4sacs
+            sudo chown -R $USER:$USER /opt/docker/konogan/html/4sacs
+            sudo chmod -R 755 /opt/docker/konogan/html/4sacs
+
+      - name: Deploy site_static via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 2222
+          source: "site_static/*"
+          target: "/opt/docker/konogan/html/4sacs"
+          overwrite: true
+          rm: false
+          strip_components: 0
+          debug: true
+
+      - name: Reload Nginx container
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 2222
+          script: |
+            cd /opt/docker/konogan
+            docker compose restart konogan
