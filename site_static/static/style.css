@@ -1,0 +1,239 @@
+/* ——— RESET ——— */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ——— VARIABLES DE THÈME ——— */
+:root {
+  --font-body: "Source Serif 4", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --bg: #fcf9f4;
+  --text: #2b2b2b;
+  --muted: #7b7b7b;
+  --accent: #2c7a7b;
+  --accent-light: #52b2b6;
+  --link-hover: #205b5d;
+  --max-width: 860px;
+  --radius: 6px;
+}
+
+/* ——— BODY ——— */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.2rem 4rem;
+}
+
+/* ——— LIENS ——— */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* ——— TITRES ——— */
+h1, h2, h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  color: var(--accent);
+}
+
+h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--accent-light);
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+/* ——— ARTICLES ——— */
+article {
+  margin-bottom: 3rem;
+}
+
+header {
+  margin-bottom: 1.2rem;
+}
+
+header h1 {
+  border: none;
+  font-size: 2.2rem;
+  color: var(--accent);
+  margin-bottom: 0.2em;
+}
+
+header em {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+header .cat,
+header .tag {
+  margin-right: 0.5rem;
+}
+
+header .cat a,
+header .tag a {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--accent);
+  opacity: 0.9;
+}
+
+/* ——— CONTENU ——— */
+.article-layout {
+  display: flex;
+  gap: 2rem;
+}
+
+.content {
+  flex: 3;
+}
+
+.content figure {
+  margin: 1.5rem 0;
+}
+
+.content img {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+  margin-bottom: 1rem; /* espace après chaque image */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+/* ——— ASIDE ——— */
+aside.side {
+  flex: 1;
+  font-size: 0.95rem;
+  color: var(--muted);
+  background: #f7f3ed;
+  border-radius: var(--radius);
+  padding: 1rem;
+  align-self: flex-start;
+}
+
+.menu-jour h3 {
+  font-family: var(--font-sans);
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.menu-jour ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ——— GÉO ——— */
+.geo {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+  background: #f1ede7;
+  color: var(--muted);
+  padding: 0.4em 0.8em;
+  border-radius: var(--radius);
+}
+
+/* ——— NAVIGATION ENTRE ARTICLES ——— */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  font-family: var(--font-sans);
+}
+
+.post-nav a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.post-nav a:hover {
+  color: var(--accent-light);
+}
+
+/* ——— LISTES (index, tags, catégories) ——— */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 0.4em 0;
+  border-bottom: 1px dotted #ddd;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a {
+  font-weight: 500;
+  color: var(--text);
+}
+
+li a:hover {
+  color: var(--accent);
+}
+
+li em {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+/* ——— FOOTER LINKS (retour) ——— */
+p a {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+p a:hover {
+  color: var(--accent-light);
+}
+
+/* ——— RESPONSIVE ——— */
+@media (max-width: 768px) {
+  body {
+    padding: 1.5rem;
+  }
+
+  .article-layout {
+    flex-direction: column;
+  }
+
+  aside.side {
+    margin-top: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+}
