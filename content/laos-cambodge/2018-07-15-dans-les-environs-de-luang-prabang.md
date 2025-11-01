@@ -66,6 +66,6 @@ Pendant ce temps, K. et moi partons à la recherche d’un tube de colle avec l�
 
 16h00 après la mission sieste/colle, mission tickets de bus pour le lendemain. Ce sera donc un départ entre 8h00 et 8h30 devant notre guesthouse.
 
-A la recherche d’un DAB qui marche, différent de celui d’hier. Toutes ces rochers nous ont fatigué, une petite pause boisson au bord du Mékong s’impose. (jus de citron, jus d’ananas, iced milk coffee, iced black coffee)
+À la recherche d’un DAB qui marche, différent de celui d’hier. Toutes ces rochers nous ont fatigué, une petite pause boisson au bord du Mékong s’impose. (jus de citron, jus d’ananas, iced milk coffee, iced black coffee)
 
 18h00 on retrouve notre stand sur le marché > au menu ce soir : nems, poulet, porc, saucisses, riz, coca, bières

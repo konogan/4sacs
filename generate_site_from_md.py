@@ -252,12 +252,12 @@ def main():
         for art in items:
             md_file = art["source"]
             h = file_hash(md_file)
-            if incremental and md_file in cache and cache[md_file]["hash"] == h:
-                continue
-            html = render_article(art, art["html"], categories_map)
-            with open(os.path.join(cat_output_dir, art["filename"]), "w", encoding="utf-8") as f:
-                f.write(html)
-            print(f"Généré : {art['filename']}")
+            unchanged = incremental and md_file in cache and cache[md_file]["hash"] == h
+            if not unchanged:
+                html = render_article(art, art["html"], categories_map)
+                with open(os.path.join(cat_output_dir, art["filename"]), "w", encoding="utf-8") as f:
+                    f.write(html)
+                print(f"Généré : {art['filename']}")
 
     # --- Suppression fichiers supprimés ---
     if incremental:
@@ -265,7 +265,7 @@ def main():
             if old_path not in new_cache and os.path.exists(old_data["output"]):
                 os.remove(old_data["output"])
                 print(f"Supprimé : {old_data['output']}")
-
+                
     # --- Pages catégories ---
     for cat, items in categories_map.items():
         cat_slug = slugify(cat)
@@ -303,7 +303,7 @@ def main():
   <article>
     <header class="article-header">
       <div class="meta">
-        <span class="cat">{SITE_TITLE}</span>
+        <span class="cat"><a href="../index.html">{SITE_TITLE}</a></span>
         <time class="date">{date_range}</time>
       </div>
       <h1 id="article-title"><span class="sep">/</span> {cat}</h1>

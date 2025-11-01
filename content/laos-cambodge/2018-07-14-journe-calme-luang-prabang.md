@@ -5,6 +5,7 @@ author: konogan
 categories:
 - Laos Cambodge
 tags:
+- marche
 - mont phusi
 lat: '19.888744'
 lng: '102.135898'
@@ -31,9 +32,9 @@ Nous visitons tous les temples de la vieille ville, les uns après les autres. N
 
 De retour à coté du Mékong c’est l’heure de la petite pause Beerlao + sodas pour les enfants.
 
-Sur la marché de nuit, les filles s’équipent de robes et pantalons plus adaptés au climat.
+Sur le **marché** de nuit, les filles s’équipent de robes et pantalons plus adaptés au climat.
 
-Après un tour des différents étals nous revenons à celui d’hier soir, pour notre repas. Quelques touristes passent, mais nous défrayons plutôt la chronique avec nos deux enfants à manger sur le marché en compagnie des locaux.
+Après un tour des différents étals, nous revenons à celui d’hier soir, pour notre repas. Quelques touristes passent, mais nous défrayons plutôt la chronique avec nos deux enfants à manger sur le marché en compagnie des locaux.
 
 ![](images/IMG_8644.jpg)
 

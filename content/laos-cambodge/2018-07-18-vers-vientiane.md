@@ -5,6 +5,7 @@ author: konogan
 categories:
 - Laos Cambodge
 tags:
+- gare routiere
 - Vientiane
 lat: ''
 lng: ''
@@ -17,13 +18,13 @@ menu:
 - coca
 ---
 
-Réveil à 7h00. Après s’être rapidement préparés nous descendons sur le perron attendre notre guide. G. et K. vont faire un tour à la boulangerie prendre quelques friandises pour le trajet.
+Réveil à 7h00. Après s’être rapidement préparés, nous descendons sur le perron attendre notre guide. G. et K. vont faire un tour à la boulangerie prendre quelques friandises pour le trajet.
 
-7h50 Mr Souk arrive pour nous emmener à la gare routière.
+7h50 Mr Souk arrive pour nous emmener à la **gare routière**.
 
 8h34 Départ du bus, nous ne dépasserons jamais les 40km/h
 
-Paysages somptueux tout au long de la route. 1 arrêt pipi et 1 arrêt repas (13h00) plus tard nous arrivons enfin dans la banlieue de Vientiane à 19h01 après 10h30 de trajet dans un petit bus, où tous les laotiens ont le mal des transports.
+Paysages somptueux tout au long de la route. 1 arrêt pipi et 1 arrêt repas (13h00) plus tard, nous arrivons enfin dans la banlieue de Vientiane à 19h01 après 10h30 de trajet dans un petit bus, où tous les laotiens ont le mal des transports.
 
 Tuktuk exorbitant (de nuit, loin de tout) pour rejoindre une guesthouse moisie réservée la veille sur Booking à **Vientiane**.
 

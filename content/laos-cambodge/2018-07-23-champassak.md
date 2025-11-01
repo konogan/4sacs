@@ -5,18 +5,21 @@ author: konogan
 categories:
 - Laos Cambodge
 tags:
-- Champassak
-- Pakse
-- Wat Phou
-lat: ''
-lng: ''
+- champassak
+- pakse
+- wat phou
+lat: '14.8423'
+lng: '105.8172'
 menu:
-- 'Le matin: Crêpe au sucre ou au chocolat pour les enfants. Oeufs sur le plat'
+- 'Le matin:'
+- Crêpe au sucre ou au chocolat pour les enfants.
+- Oeufs sur le plat
 - Tartine de porc grillé
 - café
 - eau
 - chocolat
-- 'Le soir : un curry poulet grenouilles riz'
+- 'Le soir :'
+- un curry poulet grenouilles riz
 - beignets de crevettes
 - n riz sauté au poulet
 - des nouilles sautées beaucoup de Beerlao et 2 pepsi
@@ -33,7 +36,7 @@ menu:
 ![](images/DSCN1596.jpg)
 ![](images/DSCN1626.jpg)
 
-12h30 retour à la guest house où après une bonne bière face au Mékong nous allons faire une petite sieste.
+12h30 retour à la guest house où après une bonne bière face au Mékong, nous allons faire une petite sieste.
 
 15h00 A la recherche de la poste. D’abord fermée, puis ouverte, il est difficile pour le préposé de trouver le bon nombre de timbres et de la bon affranchissement pour nos cartes postales, nous épuisons son stock de timbres compatibles pour l’Europe. On en profite pour passer par le bureau des renseignements juste à coté et c’est là que nous découvrons toutes les balades autour de Champassak et du Wat Phou, nous aurions du commencer par là.
 

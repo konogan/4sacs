@@ -1,121 +1,154 @@
-# 4sacs — Générateur de site statique
+# 4sacs – Générateur de site statique
 
-## Présentation
+## Présentation générale
 
-**4sacs** est un générateur de site statique écrit en **Python**, conçu pour transformer des articles rédigés en **Markdown** en un site HTML complet, clair et rapide à héberger (par exemple sur un serveur Nginx, une Freebox, ou GitHub Pages).
+**4sacs** est un ensemble d’outils Python permettant de générer un site statique complet à partir de fichiers **Markdown**.  
+Le système repose sur trois scripts principaux :
 
-Le projet permet désormais d’écrire et de gérer les articles **directement en Markdown**, sans base de données SQL, tout en conservant la structure, la navigation et les fonctionnalités de l’ancien site WordPress.
+1. **`generate_site_from_md.py`** — Générateur principal du site HTML.
+2. **`write.py`** — Outil d’écriture et de conversion Markdown → HTML (avec gestion de YAML front matter).
+3. **`watch_tags_from_bold.py`** — Observateur et synchroniseur automatique des **tags** et métadonnées des fichiers Markdown (utile pour surveiller les modifications dans les fichiers sources).
 
----
-
-## Objectif
-
-- Écrire des articles de voyage en Markdown.
-- Structurer les catégories et les images simplement.
-- Générer un site complet avec :
-  - Pages d’articles.
-  - Index de catégories.
-  - Pages de tags.
-  - Navigation précédente / suivante.
-  - Menu du jour et géolocalisation.
-- Produire une hiérarchie d’URL lisible :
-
-  ```
-  /categorie/index.html
-  /categorie/2024-07-13-mysore.html
-  /tags/fort/index.html
-  /tags/index.html
-  /index.html
-  ```
+Ce système ne nécessite **aucune base de données** ni CMS : tous les contenus sont stockés localement, dans des fichiers `.md`, organisés par catégories.
 
 ---
 
-## Structure du projet
+## 1. `generate_site_from_md.py` — Génération du site
+
+### Rôle
+Ce script constitue le **cœur du générateur**. Il parcourt les fichiers Markdown du répertoire `content/`, lit leurs métadonnées YAML, et construit un site statique dans `site_static/`.
+
+### Fonctionnalités principales
+- **Lecture du front matter YAML** pour extraire : `title`, `date`, `author`, `categories`, `tags`, `menu`, `lat/lng`.
+- **Conversion Markdown → HTML** via `markdown` et `BeautifulSoup`.
+- **Copie automatique** des images et fichiers statiques (`assets/ → site_static/static/`).
+- **Création des pages** :
+    - Articles individuels.
+    - Index de catégories (`/categorie/index.html`).
+    - Pages de tags (`/tags/<nom>/index.html`).
+    - Page d’accueil (`/index.html`).
+    - Page des tags (`/tags/index.html`).
+- **Mise en cache** des fichiers Markdown avec `hash MD5` pour les générations **incrémentales**.
+- **Regénération automatique des tags et catégories** à chaque exécution, même en mode incrémental.
+- **Support Google Analytics** (via variables d’environnement `.env`).
+- **Structure ARIA et sémantique HTML propre**.
+
+### Mode d’exécution
+
+#### Mode par défaut (incrémental)
+```bash
+python3 generate_site_from_md.py
+```
+Seuls les fichiers Markdown modifiés sont régénérés, mais **les tags, catégories et l’index global sont toujours mis à jour**.
+
+#### Mode complet
+```bash
+python3 generate_site_from_md.py --full
+```
+Force la régénération de **tous les fichiers** et le recalcul du cache (`.build_cache.json`).
+
+### Cache
+Le fichier `.build_cache.json` contient le hash MD5 de chaque article.  
+Lors de chaque génération :
+- Si le hash n’a pas changé → pas de régénération HTML.
+- Si le fichier est supprimé → le HTML correspondant est supprimé.
+- Si le fichier est nouveau ou modifié → il est régénéré.
+
+---
+
+## 2. `write.py` — Outil d’écriture et de conversion
+
+### Rôle
+Ce script gère la **création et modification des fichiers Markdown** à partir d’un modèle, avec validation du front matter YAML.
+
+### Fonctionnalités
+- Création de nouveaux articles Markdown avec métadonnées standardisées.
+- Conversion bidirectionnelle : édition du contenu ou génération du HTML brut pour prévisualisation.
+- Gestion automatique du front matter YAML :
+    - `title`, `date`, `author`
+    - `categories`, `tags`, `menu`, `lat`, `lng`
+- Vérification du format de date et du nom de fichier.
+- Peut être utilisé en ligne de commande ou intégré à un outil de rédaction.
+
+### Exemple d’utilisation
+```bash
+python3 write.py "inde" "2025-07-20-mysore" --title "Mysore Palace" --tags fort marché
+```
+
+Crée automatiquement :  
+`content/inde/2025-07-20-mysore.md`  
+avec le YAML prérempli et un contenu de base.
+
+---
+
+## 3. `watch_tags_from_bold.py` — Surveillance des modifications
+
+### Rôle
+Ce script est un **observateur** (watcher) des fichiers Markdown.  
+Il analyse les fichiers `.md` pour détecter les **tags**, **titres** et **catégories**, et peut déclencher automatiquement la régénération partielle du site ou la mise à jour du cache.
+
+### Fonctionnalités
+- Surveillance des répertoires `content/*`.
+- Extraction automatique des `tags:` depuis les fichiers Markdown.
+- Peut afficher les statistiques de tags (fréquence, cooccurrence).
+- Peut déclencher une commande système (`generate_site_from_md.py`) dès qu’un fichier est modifié.
+- Détection des erreurs YAML ou syntaxiques.
+
+### Exemple d’usage
+```bash
+python3 watch_tags_from_bold.py --watch
+```
+ou en mode diagnostic :
+```bash
+python3 watch_tags_from_bold.py --stats
+```
+
+---
+
+## 4. Organisation du projet
 
 ```
 4sacs/
-├── assets/                   # Fichiers statiques (CSS, JS, polices, etc.)
-│   └── style.css
-│
-├── content/                  # Contenu source (Markdown)
-│   ├── inde/                 
-│   │   ├── images/           # Images propres à cette catégorie
-│   │   │   ├── photo1.jpg
-│   │   │   └── photo2.jpg
-│   │   ├── 2024-07-10-delhi.md
-│   │   ├── 2024-07-11-taj-mahal.md
-│   │   └── ...
-│   │
-│   ├── karnataka/
+├── assets/                # Fichiers CSS/JS/images partagés
+├── content/               # Contenu Markdown classé par catégories
+│   ├── inde/
 │   │   ├── images/
-│   │   ├── 2024-07-12-bangalore.md
-│   │   └── ...
-│   │
+│   │   ├── 2025-07-10-delhi.md
+│   │   └── 2025-07-11-taj-mahal.md
 │   └── ...
 │
-├── site_static/              # Dossier généré automatiquement
-│   ├── static/               # Copie automatique de `assets/`
+├── site_static/           # Dossier généré automatiquement
+│   ├── static/
 │   ├── inde/
 │   │   ├── index.html
-│   │   ├── 2024-07-10-delhi.html
-│   │   └── ...
+│   │   └── 2025-07-10-delhi.html
 │   ├── tags/
 │   │   ├── fort/index.html
 │   │   └── index.html
 │   └── index.html
 │
-├── generate_site_from_md.py  # Générateur principal
-└── README.md
+├── generate_site_from_md.py
+├── write.py
+├── watch_tags_from_bold.py
+├── .env
+└── .build_cache.json
 ```
 
 ---
 
-## Format des articles Markdown
+## 5. Dépendances
 
-Chaque article est un fichier `.md` contenant un **front matter YAML** suivi du contenu.
+Fichier `requirements.txt` minimal :
 
-Exemple :
-
-```markdown
----
-title: "Bangalore"
-date: "2024-07-12"
-author: "Konogan"
-categories: ["Karnataka"]
-tags: ["fort", "marché"]
-lat: 12.981726
-lng: 77.614632
-menu:
-  - Dosa
-  - Chai
-  - Poha
----
-
-Une journée animée à **Bangalore**, capitale du Karnataka.  
-Nous avons visité le marché, puis le fort en fin d’après-midi.
-
-![Fort de Bangalore](images/fort.jpg)
+```
+markdown
+pyyaml
+beautifulsoup4
+python-dotenv
+watchdog
 ```
 
-### Champs disponibles
-
-| Champ | Type | Description |
-|--------|------|-------------|
-| `title` | string | Titre de l’article |
-| `date` | string (YYYY-MM-DD) | Date de publication |
-| `author` | string | Nom de l’auteur |
-| `categories` | list | Catégories principales (la première = dossier) |
-| `tags` | list | Mots-clés pour indexation |
-| `lat`, `lng` | float | Coordonnées géographiques |
-| `menu` | list | “Menu du jour” affiché dans la colonne latérale |
-
----
-
-## Génération du site
-
-### Préparer l'environnement
-
-Créer un environnement virtuel Python :
+Installation :
 
 ```bash
 python3 -m venv .venv
@@ -123,96 +156,41 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Contenu minimal de `requirements.txt` :
-
-```
-markdown
-pyyaml
-beautifulsoup4
-```
-
 ---
 
-### Lancer la génération
+## 6. Déploiement et prévisualisation
 
-#### Mode par défaut (incrémental)
-
-Génère uniquement les articles modifiés ou nouveaux :
-
+Génération du site :
 ```bash
 python3 generate_site_from_md.py
 ```
 
-#### Mode complet
-
-Force la régénération de tout le site :
-
-```bash
-python3 generate_site_from_md.py --full
-```
-
----
-
-### Fonctionnement du mode incrémental
-
-Le générateur conserve un cache (`.build_cache.json`) contenant le hash de chaque fichier Markdown.  
-Lors du prochain lancement :
-- Les fichiers non modifiés sont ignorés.
-- Les fichiers supprimés sont retirés du site.
-- Les nouveaux fichiers sont ajoutés automatiquement.
-
-Cela permet des reconstructions beaucoup plus rapides.
-
----
-
-### Résultat
-
-Le site complet est généré dans :
-
-```
-site_static/
-```
-
 Prévisualisation locale :
-
 ```bash
 python3 -m http.server --directory site_static
 ```
+→ [http://localhost:8000](http://localhost:8000)
 
-Puis ouvrir : [http://localhost:8000](http://localhost:8000)
-
----
-
-## Règles d’organisation
-
-- Chaque dossier dans `content/` correspond à une **catégorie**.
-- Chaque `.md` correspond à un article.
-- Les images doivent être placées dans `content/<categorie>/images/`.
-- Le script copie automatiquement ces images dans `site_static/<categorie>/images/`.
-- Les tags sont regroupés dans `site_static/tags/<tag>/index.html`.
+Déploiement possible sur :
+- **GitHub Pages**
+- **Freebox / NAS local**
+- **Serveur Nginx / Apache**
+- **Cloud S3 / Netlify**
 
 ---
 
-## Accessibilité et SEO
+## 7. Avantages et philosophie
 
-Le générateur applique automatiquement :
-- Un attribut `alt` à chaque image (nom de fichier si manquant).
-- Des rôles ARIA cohérents (`role="main"`, `role="navigation"`, `role="contentinfo"`...).
-- Une structure sémantique claire : `<article>`, `<header>`, `<footer>`, `<aside>`.
-
----
-
-## À venir
-
-- Génération d’une carte interactive à partir des coordonnées (`lat` / `lng`).
-- Thèmes CSS alternatifs.
-- Pagination et flux RSS.
-- Support de génération partielle par tag ou catégorie.
-- Option de déploiement automatisé.
+- 100 % **statique et autonome**
+- **Aucune base de données**
+- **Incrémental et rapide**
+- **Lisible et extensible**
+- Compatible **SEO** et **accessibilité**
+- Idéal pour un carnet de route, un blog minimaliste, ou une collection d’articles organisés.
 
 ---
 
 ## Auteur
 
-**Konogan**  
-© 2025
+**Konogan Cossec**  
+© 2025 — *4sacs Project*
