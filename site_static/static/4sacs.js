@@ -97,7 +97,29 @@ function highlightTimesInContent() {
     });
 }
 
+function highlightMealItems() {
+    const containers = document.querySelectorAll('.menu-jour');
+    if (containers.length === 0) return;
 
+    // Mots-clés détectés, insensible à la casse
+    const mealKeywords = /\b(matin|midi|soir|déjeuner|dejeuner|petit déjeuner|petit-dejeuner|dîner|diner|souper)\b\s*:/i;
+
+    containers.forEach(container => {
+        container.querySelectorAll('li').forEach(li => {
+            const text = li.textContent.trim();
+            // Test insensible à la casse (flag "i")
+            if (mealKeywords.test(text)) {
+                // Mise en gras de tout le li
+                li.innerHTML = `<strong>${li.innerHTML}</strong>`;
+                // (ou via CSS)
+                // li.classList.add('meal-highlight');
+            }
+        });
+    });
+}
+
+
+highlightMealItems();
 highlightTimesInContent();
 replaceGeoBlocksWithMaps();
 initCategoryMap();

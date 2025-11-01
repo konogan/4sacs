@@ -1,4 +1,16 @@
 {
+  "content/Malaisie/2025-07-13-arrive-kuala-lumpur.md": {
+    "hash": "a9cfcd02d964f2213a25febd86bf285d",
+    "output": "site_static/malaisie/2025-07-13-arrive-kuala-lumpur.html"
+  },
+  "content/Malaisie/2025-07-14-batu-caves.md": {
+    "hash": "4378e6e673e5f1a54d0362c7c8ac88ce",
+    "output": "site_static/malaisie/2025-07-14-batu-caves.html"
+  },
+  "content/Malaisie/2025-07-15-vers-ipoh.md": {
+    "hash": "68df9d5152c67b60f182712859171804",
+    "output": "site_static/malaisie/2025-07-15-vers-ipoh.html"
+  },
   "content/infos/Qui-sommes-nous.md": {
     "hash": "1f273496b0ef3e998dd0913a53659d59",
     "output": "site_static/infos/2016-07-09-qui-sommes-nous.html"
