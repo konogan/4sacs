@@ -99,13 +99,21 @@ def get_favicon_html():
   <link rel="shortcut icon" type="image/png" href="/{favicon_path}">
 """
 
+def get_head_html():
+    """Retourne les balises js communes à toutes les pages"""
+    return f"""
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+   <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.css" />
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+   <script src="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.js"></script>
+   <script src="../static/4sacs.js" defer></script>
+"""
 
 def get_ga_script():
     """Retourne le script Google Analytics (si activé)."""
     if not ENABLE_ANALYTICS or not GA_TRACKING_ID or GA_TRACKING_ID.startswith("G-XXXX"):
         return ""
     return f"""
-  <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={GA_TRACKING_ID}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -165,6 +173,7 @@ def render_article(meta, content_html, categories_map):
   <title>{title}</title>
   <link rel="stylesheet" href="../{CSS_URL}">
   {get_favicon_html()}
+  {get_head_html()}
   {get_ga_script()}
 </head>
 <body>
@@ -246,7 +255,8 @@ def main():
         cat_slug = slugify(cat)
         cat_output_dir = os.path.join(OUTPUT_DIR, cat_slug)
         items_html = "\n".join(
-            f"<li><a href='{it['filename']}'>{it['title']}</a> <em>({it['date']})</em></li>"
+            f"<li class='category' data-lat='{it.get('lat', '')}' data-lng='{it.get('lng', '')}'>"
+            f"<a href='{it['filename']}'>{it['title']}</a> <em>({it.get('date', '')})</em></li>"
             for it in items
         )
         html = f"""<!DOCTYPE html>
@@ -255,6 +265,7 @@ def main():
   <meta charset="utf-8"><title>{cat}</title>
   <link rel="stylesheet" href="../{CSS_URL}">
   {get_favicon_html()}
+  {get_head_html()}
   {get_ga_script()}
 </head>
 <body>
@@ -290,6 +301,7 @@ def main():
   <meta charset="utf-8"><title>#{tag}</title>
   <link rel="stylesheet" href="../../{CSS_URL}">
   {get_favicon_html()}
+  {get_head_html()}
   {get_ga_script()}
 </head>
 <body>
@@ -315,6 +327,7 @@ def main():
   <title>Tags</title>
   <link rel="stylesheet" href="../{CSS_URL}">
   {get_favicon_html()}
+  {get_head_html()}
   {get_ga_script()}
 </head>
 <body>

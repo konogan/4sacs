@@ -8,7 +8,13 @@
   <link rel="shortcut icon" type="image/png" href="/static/4sacs.png">
 
   
-  <!-- Google tag (GA4) -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+   <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.css" />
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+   <script src="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.js"></script>
+   <script src="../static/4sacs.js" defer></script>
+
+  
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNDF9XBG58"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -19,29 +25,29 @@
 </head>
 <body>
   <article><header><h1><span class='cat'><a href="../index.html">4sacs</a></span> / Tamil Nadu</h1></header>
-  <main><ul><li><a href='2019-07-18-arrive-chennai.html'>Arrivée à Chennai</a> <em>(2019-07-18)</em></li>
-<li><a href='2019-07-19-journe-chennai.html'>Journée à Chennai</a> <em>(2019-07-19)</em></li>
-<li><a href='2019-07-20-vers-mahabalipuram.html'>Vers Mahabalipuram</a> <em>(2019-07-20)</em></li>
-<li><a href='2019-07-21-mahabalipuram.html'>Mahabalipuram</a> <em>(2019-07-21)</em></li>
-<li><a href='2019-07-22-poudouchry.html'>Poudouchéry</a> <em>(2019-07-22)</em></li>
-<li><a href='2019-07-23-vers-yercaud.html'>Vers Yercaud</a> <em>(2019-07-23)</em></li>
-<li><a href='2019-07-24-yercaud.html'>Yercaud</a> <em>(2019-07-24)</em></li>
-<li><a href='2019-07-25-madura.html'>Maduraï</a> <em>(2019-07-25)</em></li>
-<li><a href='2019-07-26-visite-de-madura.html'>Visite de Maduraï</a> <em>(2019-07-26)</em></li>
-<li><a href='2019-07-27-vers-kanyakumari.html'>Vers Kanyakumari</a> <em>(2019-07-27)</em></li>
-<li><a href='2019-07-28-kanyakumari.html'>Kanyakumari</a> <em>(2019-07-28)</em></li>
-<li><a href='2019-07-29-vers-kovalam.html'>Vers Kovalam</a> <em>(2019-07-29)</em></li>
-<li><a href='2019-07-30-kovalam-jour-2.html'>Kovalam jour 2</a> <em>(2019-07-30)</em></li>
-<li><a href='2019-07-31-kovalam-jour-3.html'>Kovalam jour 3</a> <em>(2019-07-31)</em></li>
-<li><a href='2019-08-01-vers-trichy.html'>Vers Trichy</a> <em>(2019-08-01)</em></li>
-<li><a href='2019-08-02-trichy.html'>Trichy</a> <em>(2019-08-02)</em></li>
-<li><a href='2019-08-03-vers-tanjore.html'>Vers Tanjore</a> <em>(2019-08-03)</em></li>
-<li><a href='2019-08-04-vers-kumbakonam.html'>vers Kumbakonam</a> <em>(2019-08-04)</em></li>
-<li><a href='2019-08-05-kumbakonam.html'>Kumbakonam</a> <em>(2019-08-05)</em></li>
-<li><a href='2019-08-06-tharangambadi.html'>Tharangambadi</a> <em>(2019-08-06)</em></li>
-<li><a href='2019-08-07-retour-mahabalipuram.html'>Retour à Mahabalipuram</a> <em>(2019-08-07)</em></li>
-<li><a href='2019-08-08-la-journe-impossible.html'>La journée impossible</a> <em>(2019-08-08)</em></li>
-<li><a href='2019-08-09-journe-tranquille-chennai.html'>Journée tranquille à Chennai</a> <em>(2019-08-09)</em></li></ul></main>
+  <main><ul><li class='category' data-lat='13.079146' data-lng='80.285030'><a href='2019-07-18-arrive-chennai.html'>Arrivée à Chennai</a> <em>(2019-07-18)</em></li>
+<li class='category' data-lat='13.045383' data-lng='80.278800'><a href='2019-07-19-journe-chennai.html'>Journée à Chennai</a> <em>(2019-07-19)</em></li>
+<li class='category' data-lat='12.619598' data-lng='80.193650'><a href='2019-07-20-vers-mahabalipuram.html'>Vers Mahabalipuram</a> <em>(2019-07-20)</em></li>
+<li class='category' data-lat='12.604407' data-lng='80.192642'><a href='2019-07-21-mahabalipuram.html'>Mahabalipuram</a> <em>(2019-07-21)</em></li>
+<li class='category' data-lat='11.899604' data-lng='79.793778'><a href='2019-07-22-poudouchry.html'>Poudouchéry</a> <em>(2019-07-22)</em></li>
+<li class='category' data-lat='11.785207' data-lng='78.207539'><a href='2019-07-23-vers-yercaud.html'>Vers Yercaud</a> <em>(2019-07-23)</em></li>
+<li class='category' data-lat='11.785207' data-lng='78.207539'><a href='2019-07-24-yercaud.html'>Yercaud</a> <em>(2019-07-24)</em></li>
+<li class='category' data-lat='9.926115' data-lng='78.114098'><a href='2019-07-25-madura.html'>Maduraï</a> <em>(2019-07-25)</em></li>
+<li class='category' data-lat='9.926115' data-lng='78.114098'><a href='2019-07-26-visite-de-madura.html'>Visite de Maduraï</a> <em>(2019-07-26)</em></li>
+<li class='category' data-lat='8.079252' data-lng='77.549934'><a href='2019-07-27-vers-kanyakumari.html'>Vers Kanyakumari</a> <em>(2019-07-27)</em></li>
+<li class='category' data-lat='8.079252' data-lng='77.549934'><a href='2019-07-28-kanyakumari.html'>Kanyakumari</a> <em>(2019-07-28)</em></li>
+<li class='category' data-lat='8.385518' data-lng='76.978712'><a href='2019-07-29-vers-kovalam.html'>Vers Kovalam</a> <em>(2019-07-29)</em></li>
+<li class='category' data-lat='8.382586' data-lng='76.979828'><a href='2019-07-30-kovalam-jour-2.html'>Kovalam jour 2</a> <em>(2019-07-30)</em></li>
+<li class='category' data-lat='' data-lng=''><a href='2019-07-31-kovalam-jour-3.html'>Kovalam jour 3</a> <em>(2019-07-31)</em></li>
+<li class='category' data-lat='10.807114' data-lng='78.688094'><a href='2019-08-01-vers-trichy.html'>Vers Trichy</a> <em>(2019-08-01)</em></li>
+<li class='category' data-lat='10.804474' data-lng='78.710691'><a href='2019-08-02-trichy.html'>Trichy</a> <em>(2019-08-02)</em></li>
+<li class='category' data-lat='10.786027' data-lng='79.138150'><a href='2019-08-03-vers-tanjore.html'>Vers Tanjore</a> <em>(2019-08-03)</em></li>
+<li class='category' data-lat='10.960411' data-lng='79.382086'><a href='2019-08-04-vers-kumbakonam.html'>vers Kumbakonam</a> <em>(2019-08-04)</em></li>
+<li class='category' data-lat='10.960411' data-lng='79.382086'><a href='2019-08-05-kumbakonam.html'>Kumbakonam</a> <em>(2019-08-05)</em></li>
+<li class='category' data-lat='11.029929' data-lng='79.852196'><a href='2019-08-06-tharangambadi.html'>Tharangambadi</a> <em>(2019-08-06)</em></li>
+<li class='category' data-lat='12.619598' data-lng='80.193650'><a href='2019-08-07-retour-mahabalipuram.html'>Retour à Mahabalipuram</a> <em>(2019-08-07)</em></li>
+<li class='category' data-lat='12.964716' data-lng='79.983969'><a href='2019-08-08-la-journe-impossible.html'>La journée impossible</a> <em>(2019-08-08)</em></li>
+<li class='category' data-lat='13.083694' data-lng='80.270186'><a href='2019-08-09-journe-tranquille-chennai.html'>Journée tranquille à Chennai</a> <em>(2019-08-09)</em></li></ul></main>
   <footer><p><a href="../index.html">← Retour</a></p></footer></article>
 </body>
 </html>
