@@ -77,9 +77,7 @@ function initCategoryMap() {
 }
 
 
-sfunction
-highlightTimesInContent()
-{
+function highlightTimesInContent() {
     const containers = document.querySelectorAll('.content');
     if (containers.length === 0) return;
 
