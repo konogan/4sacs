@@ -5,10 +5,13 @@ author: konogan
 categories:
 - Malaisie
 tags:
+- atm
+- aéroport
 - Hotel
-- Metro
 - KL
 - Kuala Lumpur
+- Metro
+- mosquée
 lat: '3.1390'
 lng: '101.6869'
 menu:
@@ -24,9 +27,7 @@ menu:
 - 1 gde bouteille d'eau
 ---
 
-[//]: # ( ![]&#40;images/nom.jpg&#41;)
-
-12h30 La maison est bouclée direction l'aéroport CDG 1
+12h30 La maison est bouclée direction l'**aéroport** CDG 1
 
 13h30 début du checkin pour Doha
 
@@ -42,19 +43,19 @@ Escale à Doha, l'aéroport à encore changé, mais nous retrouvons le gros noun
 
 16h00 Passage en douane, formulaires à remplir en ligne (cela aurait cool de la savoir avant) mais le passeport d'Elouan ne fonctionne pas avec les bornes automatiques (comme d'habitude), nous passons donc avec un fonctionnaire.
 
-Retrait argent ATM achat des tickets de bus au terminal (Niveau 2)
+Retrait argent **ATM** achat des tickets de bus au terminal (Niveau 2)
 
 17h00 Bus EKSPRES pour KL Sentral
 
 18h40 Achat jetons de metro pour Masjid Jamek (Ligne KJL / Gomback) 4 x 6,40 
 
-19h00 Metro
+19h00 **Metro**
 
 19h30 Checkin hôtel
 
-20h00 Nosu ressortons vite manger dans un restaurant Indien situé au cœur de Little India le BetelLeaf
+20h00 Nous ressortons vite manger dans un restaurant Indien situé au cœur de Little India le BetelLeaf
 
-Retour à l'hôtel en passant par la pharmacie pour l'anti moustiques. La mosquée est illuminée en bleu. Passage par le 7 eleven proche (gateaux x 2, boissons x 2)
+Retour à l'hôtel en passant par la pharmacie pour l'anti moustiques. La **mosquée** est illuminée en bleu. Passage par le 7 eleven proche (gateaux x 2, boissons x 2)
 
 22h00 Douche, carnet, balade... La journée fut bien longue
 

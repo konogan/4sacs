@@ -1,15 +1,23 @@
 {
   "content/Malaisie/2025-07-13-arrive-kuala-lumpur.md": {
-    "hash": "a9cfcd02d964f2213a25febd86bf285d",
+    "hash": "c1dee1911ff78c8c36c732769f548a65",
     "output": "site_static/malaisie/2025-07-13-arrive-kuala-lumpur.html"
   },
   "content/Malaisie/2025-07-14-batu-caves.md": {
-    "hash": "4378e6e673e5f1a54d0362c7c8ac88ce",
+    "hash": "9c3875af5afe21b4235301ab24e76c25",
     "output": "site_static/malaisie/2025-07-14-batu-caves.html"
   },
   "content/Malaisie/2025-07-15-vers-ipoh.md": {
-    "hash": "68df9d5152c67b60f182712859171804",
+    "hash": "86dd8361fcdccf42c849195d2a994780",
     "output": "site_static/malaisie/2025-07-15-vers-ipoh.html"
+  },
+  "content/Malaisie/2025-07-16-ipoh.md": {
+    "hash": "c4b528e3b2c8d388dc302746f6f642bc",
+    "output": "site_static/malaisie/2025-07-16-ipoh.html"
+  },
+  "content/Malaisie/2025-07-17-vers-georgetown.md": {
+    "hash": "787480a337fba76fd420e0426ef68c10",
+    "output": "site_static/malaisie/2025-07-17-vers-georgetown.html"
   },
   "content/infos/Qui-sommes-nous.md": {
     "hash": "1f273496b0ef3e998dd0913a53659d59",
