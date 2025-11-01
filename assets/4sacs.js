@@ -34,18 +34,16 @@ function replaceGeoBlocksWithMaps() {
 function initCategoryMap() {
     const items = document.querySelectorAll("li.category[data-lat][data-lng]");
     if (items.length === 0) return;
-    console.log("items:", items);
 
     let mapContainer = document.getElementById("map");
     if (!mapContainer) {
         const listParent = items[0].closest("ul") || document.body;
-        console.log("listParent:", listParent);
         mapContainer = document.createElement("div");
         mapContainer.id = "map";
         mapContainer.classList.add("category-map");
         mapContainer.setAttribute("role", "region");
         mapContainer.setAttribute("aria-label", "Carte des emplacements");
-        listParent.after(mapContainer);
+        listParent.before(mapContainer);
     }
 
     const map = L.map(mapContainer).setView([46.8, 2.5], 5);
@@ -79,5 +77,29 @@ function initCategoryMap() {
 }
 
 
+sfunction
+highlightTimesInContent()
+{
+    const containers = document.querySelectorAll('.content');
+    if (containers.length === 0) return;
+
+    const timePattern = /\b(\d{1,2}h(?:\d{2})?)\b/g;
+
+    containers.forEach(container => {
+        container.querySelectorAll('*').forEach(el => {
+            el.childNodes.forEach(node => {
+                if (node.nodeType === Node.TEXT_NODE && timePattern.test(node.textContent)) {
+                    const newHTML = node.textContent.replace(timePattern, '<strong>$1</strong>');
+                    const wrapper = document.createElement('span');
+                    wrapper.innerHTML = newHTML;
+                    node.replaceWith(...wrapper.childNodes);
+                }
+            });
+        });
+    });
+}
+
+
+highlightTimesInContent();
 replaceGeoBlocksWithMaps();
 initCategoryMap();
