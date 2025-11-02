@@ -18,12 +18,13 @@ menu:
   - 3 thés
   - 1 café
   - 'Soir:'
-  - cochon sur plaque chauffante 10 myr
-  - bol de riz + cochon grillé 12 myr
-  - nouilles sautées crevette oeuf 9 myr
-  - 1 gde biere 21 myr
-  - 2 white coffees 8 myr
-  - 3 crepes/ pancakes chinois 8 myr
+  - porc plaque chauffante
+  - 2 x bol de riz + porc grillé 
+  - nouilles sautées crevette oeuf 
+  - 1 gde biere 
+  - 2 white coffees 
+  - 3 crepes/ pancakes chinois
+  - = 68 myr
 ---
 
 8h30 réveil

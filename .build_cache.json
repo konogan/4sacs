@@ -16,8 +16,24 @@
     "output": "site_static/malaisie/2025-07-16-ipoh.html"
   },
   "content/Malaisie/2025-07-17-vers-georgetown.md": {
-    "hash": "787480a337fba76fd420e0426ef68c10",
+    "hash": "bf9c5f7d028d81495a8aa11b3dfbcf7f",
     "output": "site_static/malaisie/2025-07-17-vers-georgetown.html"
+  },
+  "content/Malaisie/2025-07-18-georgetown.md": {
+    "hash": "c6232920c2d05b308d16d56030a291b8",
+    "output": "site_static/malaisie/2025-07-18-georgetown.html"
+  },
+  "content/Malaisie/2025-07-19-vers-est.md": {
+    "hash": "866bcc61a616d67daafab03355341cef",
+    "output": "site_static/malaisie/2025-07-19-vers-lest.html"
+  },
+  "content/Malaisie/2025-07-20-kota-bahru.md": {
+    "hash": "dc191df1659a135733e72a847627c6a5",
+    "output": "site_static/malaisie/2025-07-20-kota-bahru.html"
+  },
+  "content/Malaisie/2025-07-21-campagne-kota-bahru.md": {
+    "hash": "abe4e12cc409f575245088d2f7235349",
+    "output": "site_static/malaisie/2025-07-21-la-campagne-de-kota-bahru.html"
   },
   "content/infos/Qui-sommes-nous.md": {
     "hash": "1f273496b0ef3e998dd0913a53659d59",
