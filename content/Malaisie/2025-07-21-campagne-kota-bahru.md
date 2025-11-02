@@ -7,8 +7,8 @@ categories:
 tags:
 - atm
 - temple
-lat: '6.1333'
-lng: '102.2386'
+lat: '6.1862'
+lng: '102.1084'
 menu:
 - 'Matin:'
 - 2 nasi ayam

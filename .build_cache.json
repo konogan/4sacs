@@ -24,7 +24,7 @@
     "output": "site_static/malaisie/2025-07-18-georgetown.html"
   },
   "content/Malaisie/2025-07-19-vers-est.md": {
-    "hash": "866bcc61a616d67daafab03355341cef",
+    "hash": "0ca2670622dbe12410ad6f3de54a7c66",
     "output": "site_static/malaisie/2025-07-19-vers-lest.html"
   },
   "content/Malaisie/2025-07-20-kota-bahru.md": {
@@ -32,8 +32,12 @@
     "output": "site_static/malaisie/2025-07-20-kota-bahru.html"
   },
   "content/Malaisie/2025-07-21-campagne-kota-bahru.md": {
-    "hash": "abe4e12cc409f575245088d2f7235349",
+    "hash": "b7f03e792382a49bd76216b933f8bda0",
     "output": "site_static/malaisie/2025-07-21-la-campagne-de-kota-bahru.html"
+  },
+  "content/Malaisie/2025-07-22-toujours-kota-bahru.md": {
+    "hash": "d4296ad1bd2696f2f6b7167a5fc62766",
+    "output": "site_static/malaisie/2025-07-22-toujours-kota-bahru.html"
   },
   "content/infos/Qui-sommes-nous.md": {
     "hash": "1f273496b0ef3e998dd0913a53659d59",
@@ -60,7 +64,7 @@
     "output": "site_static/karnataka/2024-07-15-le-palais-de-mysore.html"
   },
   "content/karnataka/2024-07-16-belur.md": {
-    "hash": "7485a43193d135f0745705c0092b875a",
+    "hash": "c3bbea5f67a5ae44fc88e858e3e56fbc",
     "output": "site_static/karnataka/2024-07-16-belur.html"
   },
   "content/karnataka/2024-07-17-temples-de-belur-et-halebid.md": {
