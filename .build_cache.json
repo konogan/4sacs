@@ -36,8 +36,40 @@
     "output": "site_static/malaisie/2025-07-21-la-campagne-de-kota-bahru.html"
   },
   "content/Malaisie/2025-07-22-toujours-kota-bahru.md": {
-    "hash": "d4296ad1bd2696f2f6b7167a5fc62766",
+    "hash": "b454257a87645f82f24204cb0401003f",
     "output": "site_static/malaisie/2025-07-22-toujours-kota-bahru.html"
+  },
+  "content/Malaisie/2025-07-23-vers-kapas.md": {
+    "hash": "38ca5ba30b5826c38cc365217572e9a9",
+    "output": "site_static/malaisie/2025-07-23-vers-kapas.html"
+  },
+  "content/Malaisie/2025-07-24-kapas.md": {
+    "hash": "e662132745176293a992721f836b6bef",
+    "output": "site_static/malaisie/2025-07-24-kapas.html"
+  },
+  "content/Malaisie/2025-07-25-adieu-kapas.md": {
+    "hash": "22c08122c39a968ecb3f020492fb0ce2",
+    "output": "site_static/malaisie/2025-07-25-adieu-kapas.html"
+  },
+  "content/Malaisie/2025-07-26-vers-le-sud.md": {
+    "hash": "f5a52660860f2b77e2f837f701040c5a",
+    "output": "site_static/malaisie/2025-07-26-vers-le-sud.html"
+  },
+  "content/Malaisie/2025-07-27-kuantan.md": {
+    "hash": "852bc38254295a200d81b14f73940081",
+    "output": "site_static/malaisie/2025-07-27-kuantan.html"
+  },
+  "content/Malaisie/2025-07-28-cap-a-l-ouest.md": {
+    "hash": "41334540a4d180ded510c9cb5a18b014",
+    "output": "site_static/malaisie/2025-07-28-cap-louest.html"
+  },
+  "content/Malaisie/2025-07-29-malacca.md": {
+    "hash": "3e054e9002ceee875e57e563c5b0e3ff",
+    "output": "site_static/malaisie/2025-07-28-malacca.html"
+  },
+  "content/Malaisie/2025-07-30-malacca-suite.md": {
+    "hash": "9d9e9d916ec983881bdeb1d0b652b95d",
+    "output": "site_static/malaisie/2025-07-29-malacca-suite.html"
   },
   "content/infos/Qui-sommes-nous.md": {
     "hash": "1f273496b0ef3e998dd0913a53659d59",
