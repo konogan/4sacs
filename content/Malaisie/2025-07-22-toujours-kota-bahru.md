@@ -10,7 +10,7 @@ tags:
 - marche
 - marche nocturne
 - musee
-- quartier chinois
+- Chinatown
 lat: '5.3302'
 lng: '103.1408'
 menu:
@@ -47,9 +47,10 @@ repartir.
 
 16h30 Arrivée à **Kuala Terranganu** et notre hôtel et sa chambre gigantesque et surprenante.
 
-17h00 Balade sur le **marché** qui ferme, puis au board de l'eau avant de retrouver le **quartier chinois** et revenir à notre hôtel.
+17h00 Balade sur le **marché** qui ferme, puis au board de l'eau avant de retrouver **Chinatown** et revenir à notre hôtel.
 
-19h00 Il est l'heure de ressortir, on se dirige ves le quatier chinois. Le premier restaurant repéré est plein et il faut faire la queue. Finalement, nous trouvons un repaire de pirates tenu par une famille dans une rue parallele.
+19h00 Il est l'heure de ressortir, on se dirige ves le quatier chinois. Le premier restaurant repéré est plein et il faut faire la queue. 
+Finalement, nous trouvons un repaire de pirates tenu par une famille dans une rue parallele.
 
 Revenons ensuite à l'hôtel en passant par le **marché nocturne** très décevant.
 

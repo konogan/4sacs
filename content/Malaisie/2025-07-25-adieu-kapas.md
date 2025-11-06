@@ -11,7 +11,7 @@ tags:
 - gare routiere
 - kapas
 - marche
-- quartier chinois
+- Chinatown
 lat: '5.2167'
 lng: '103.2670'
 menu:
@@ -36,6 +36,8 @@ menu:
 
 9h00 **baignade** pour profiter jusqu'au bout
 
+![2025-07-25_001.jpg](images/2025-07-25_001.jpg)
+
 11h30 dépot des clés et petites gaufres au chocolat sur la plage en attendant notre bateau.
 
 12h30 **Bateau** pour Marang
@@ -46,7 +48,9 @@ les tickets de bus du lendemain à la **gare routière**. Passage par le **march
 
 16h00 retour hôtel, sieste, carnet, billard
 
-19h00 direction le **quartier chinois** en passant par un petit temple en bord de rivière.
+![2025-07-25_002.jpg](images/2025-07-25_002.jpg)
+
+19h00 direction **Chinatown** en passant par un petit temple en bord de rivière.
 Nous retournons évidemment manger chez Oncle Heng das le grand hangar pour diner.
 
 Retour hôtel, partie de billard en famille.

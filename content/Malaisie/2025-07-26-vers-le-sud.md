@@ -46,6 +46,9 @@ pour rejoindre notre guest house. Il n'y a pas de bus, pas de trottoirs, c'est l
 14h00 grab pour le centre-ville. Korydwen teste une boulangerie réputée (4 myr le brownie bof). C'est la fête dans le
 centre-ville. Il y a des stands partout, des courses de bateaux sur la rivère. Korydwen teste un "character drink", un
 dinosaure en gelée dans un mix chimique (14 myr). Elouan un crispy banana roti (10 myr)
+
+![2025-07-26_001.jpg](images/2025-07-26_001.jpg)
+
 Arrêt café dans un lieu qui est normalement un restaurant spécialisé dans le poulet. Nous tentons de revenir à la gh à
 pied, mais c'est trop compliqué.
 
@@ -54,3 +57,5 @@ pied, mais c'est trop compliqué.
 19h00 grab pour le Sara Thai Kitchen Jalan Gambut grand restaurant repéré l'après-midi. Nouas arrivons à rejoindre le
 **marché de nuit** devant la **mosquée** Negeri Pahang. Nous mangeons quelques friandises avant de prendre un grab pour revenir à
 la guest-house.
+
+![2025-07-26_002.jpg](images/2025-07-26_002.jpg)

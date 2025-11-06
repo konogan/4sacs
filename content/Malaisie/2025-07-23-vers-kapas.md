@@ -40,6 +40,8 @@ menu:
 
 11h30 Prenons possessions de nos bungalows avant de partir en balade / **baignade**.
 
+![2025-07-23_001.jpg](images/2025-07-23_001.jpg)
+
 13h00 Retour chambre. Direction le bar/restaurant situé non loin.
 
 15h00 Carnets en terrasse, sieste hamac.
@@ -50,3 +52,4 @@ menu:
 
 Puis dodo après avoir profité du coucher de soleil.
 
+![2025-07-23_002.jpg](images/2025-07-23_002.jpg)

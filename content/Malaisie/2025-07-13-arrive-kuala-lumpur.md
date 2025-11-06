@@ -35,7 +35,11 @@ menu:
 
 17h20 décollage de l'avion, la journée commence à être longue :) 
 
+![2025-07-12_001.jpg](images/2025-07-12_001.jpg)
+
 Escale à Doha, l'aéroport à encore changé, mais nous retrouvons le gros nounours
+
+![2025-07-13_001.jpg](images/2025-07-13_001.jpg)
 
 2h50 heure locale décollage 
 
@@ -56,6 +60,11 @@ Retrait argent **ATM** achat des tickets de bus au terminal (Niveau 2)
 20h00 Nous ressortons vite manger dans un restaurant Indien situé au cœur de Little India le BetelLeaf
 
 Retour à l'hôtel en passant par la pharmacie pour l'anti moustiques. La **mosquée** est illuminée en bleu. Passage par le 7 eleven proche (gateaux x 2, boissons x 2)
+
+
+![2025-07-13_002.jpg](images/2025-07-13_002.jpg)
+![2025-07-13_003.jpg](images/2025-07-13_003.jpg)
+
 
 22h00 Douche, carnet, balade... La journée fut bien longue
 

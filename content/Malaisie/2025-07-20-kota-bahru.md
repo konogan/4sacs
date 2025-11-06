@@ -38,7 +38,12 @@ menu:
 
 10h30 Visite du **marché**, les stands de nourriture sont ouvert, vite un petit déjeuner.
 
+![2025-07-20_001.jpg](images/2025-07-20_001.jpg)
+![2025-07-20_002.jpg](images/2025-07-20_002.jpg)
+
 11h00 Journée des visites de la ville. Le handicraft muséum dans une très belle vieille demeure.  Visite du **palais**. Visite de la **résidence**.
+
+![2025-07-20_003.jpg](images/2025-07-20_003.jpg)
 
 13h00 Arrivés au **musée** municipal, mais il est fermé pour "Installation" 
 
@@ -47,3 +52,7 @@ menu:
 15h30 De retour au handicraft center, dessiner à l'ombre et sirotant un tea O ice. NOus revenons ensuite tranquillement par la mosquée et les quais.
 
 19h00 De nouveau au restaurant chinois.
+
+Sur le retour, arrêt dans un petit stand de rue pour des petits beignets
+![2025-07-20_004.jpg](images/2025-07-20_004.jpg)
+![2025-07-20_005.jpg](images/2025-07-20_005.jpg)

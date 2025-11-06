@@ -42,6 +42,8 @@ menu:
 
 15h40 nous reprenons un grab pour retourner au centre culturel (Ouvert seulement le lundi, mercredi et samedi de 15h30 à 17h30). Nous assistons à des demonstrations de tambours, de silat, de toupies avant de finir au bar du centre. Nous revenons ensuite vers le centre-ville, à pied, en passant par le musée municipal (où l'installation est finie), il n'y a rien à voir, ce sont les étudiants qui présentent leur projet (pas d'art, mais de développement écologique / économique) de fin d'études.
 
+![2025-07-21_001.jpg](images/2025-07-21_001.jpg)
+
 19h30 Restaurant chinois.
 
 20h30 petites douceurs chocolatées dans la rue

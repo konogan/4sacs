@@ -1,75 +1,87 @@
 {
   "content/Malaisie/2025-07-13-arrive-kuala-lumpur.md": {
-    "hash": "c1dee1911ff78c8c36c732769f548a65",
+    "hash": "1911db7ef7979fb01204c79170837f73",
     "output": "site_static/malaisie/2025-07-13-arrive-kuala-lumpur.html"
   },
   "content/Malaisie/2025-07-14-batu-caves.md": {
-    "hash": "9c3875af5afe21b4235301ab24e76c25",
+    "hash": "6aea3853cf27bc83c2f9d86d8dabfeb0",
     "output": "site_static/malaisie/2025-07-14-batu-caves.html"
   },
   "content/Malaisie/2025-07-15-vers-ipoh.md": {
-    "hash": "86dd8361fcdccf42c849195d2a994780",
+    "hash": "89507b6af6c56c656176bb968f715f43",
     "output": "site_static/malaisie/2025-07-15-vers-ipoh.html"
   },
   "content/Malaisie/2025-07-16-ipoh.md": {
-    "hash": "c4b528e3b2c8d388dc302746f6f642bc",
+    "hash": "74b0b761ee3ff07bb709e93a5e61f7dd",
     "output": "site_static/malaisie/2025-07-16-ipoh.html"
   },
   "content/Malaisie/2025-07-17-vers-georgetown.md": {
-    "hash": "bf9c5f7d028d81495a8aa11b3dfbcf7f",
+    "hash": "c11dec560458aae2f1034ad8f1ad79d4",
     "output": "site_static/malaisie/2025-07-17-vers-georgetown.html"
   },
   "content/Malaisie/2025-07-18-georgetown.md": {
-    "hash": "c6232920c2d05b308d16d56030a291b8",
+    "hash": "438f3cb5f0c3c4fd5adab4ecf6f96bf0",
     "output": "site_static/malaisie/2025-07-18-georgetown.html"
   },
   "content/Malaisie/2025-07-19-vers-est.md": {
-    "hash": "0ca2670622dbe12410ad6f3de54a7c66",
+    "hash": "77726a4dbd2d589c559af5b597dab87f",
     "output": "site_static/malaisie/2025-07-19-vers-lest.html"
   },
   "content/Malaisie/2025-07-20-kota-bahru.md": {
-    "hash": "dc191df1659a135733e72a847627c6a5",
+    "hash": "04886c4ea259e6374ae59fc4959caa8d",
     "output": "site_static/malaisie/2025-07-20-kota-bahru.html"
   },
   "content/Malaisie/2025-07-21-campagne-kota-bahru.md": {
-    "hash": "b7f03e792382a49bd76216b933f8bda0",
+    "hash": "bcd85ea300bb7ca9af71a1d724105511",
     "output": "site_static/malaisie/2025-07-21-la-campagne-de-kota-bahru.html"
   },
   "content/Malaisie/2025-07-22-toujours-kota-bahru.md": {
-    "hash": "b454257a87645f82f24204cb0401003f",
+    "hash": "69577278f618e2aff4392b85603bebaa",
     "output": "site_static/malaisie/2025-07-22-toujours-kota-bahru.html"
   },
   "content/Malaisie/2025-07-23-vers-kapas.md": {
-    "hash": "38ca5ba30b5826c38cc365217572e9a9",
+    "hash": "4bdeaec21d43bfaaa4ece7f62b5054f1",
     "output": "site_static/malaisie/2025-07-23-vers-kapas.html"
   },
   "content/Malaisie/2025-07-24-kapas.md": {
-    "hash": "e662132745176293a992721f836b6bef",
+    "hash": "d866de271f33db56eaf2de94fc92afbd",
     "output": "site_static/malaisie/2025-07-24-kapas.html"
   },
   "content/Malaisie/2025-07-25-adieu-kapas.md": {
-    "hash": "22c08122c39a968ecb3f020492fb0ce2",
+    "hash": "21222dbd6a9a0c29cfe4618ded4d2df5",
     "output": "site_static/malaisie/2025-07-25-adieu-kapas.html"
   },
   "content/Malaisie/2025-07-26-vers-le-sud.md": {
-    "hash": "f5a52660860f2b77e2f837f701040c5a",
+    "hash": "676bd9a38b4cd121b0b3c1878a4bd95a",
     "output": "site_static/malaisie/2025-07-26-vers-le-sud.html"
   },
   "content/Malaisie/2025-07-27-kuantan.md": {
-    "hash": "852bc38254295a200d81b14f73940081",
+    "hash": "94f1ed47acbd439446819210e2727f7d",
     "output": "site_static/malaisie/2025-07-27-kuantan.html"
   },
   "content/Malaisie/2025-07-28-cap-a-l-ouest.md": {
-    "hash": "41334540a4d180ded510c9cb5a18b014",
+    "hash": "9f3a820e2d65675ccb3a6b290e6a017b",
     "output": "site_static/malaisie/2025-07-28-cap-louest.html"
   },
   "content/Malaisie/2025-07-29-malacca.md": {
-    "hash": "3e054e9002ceee875e57e563c5b0e3ff",
+    "hash": "8b0e0f6f109afc6d847215afd146e6ec",
     "output": "site_static/malaisie/2025-07-28-malacca.html"
   },
   "content/Malaisie/2025-07-30-malacca-suite.md": {
     "hash": "9d9e9d916ec983881bdeb1d0b652b95d",
     "output": "site_static/malaisie/2025-07-29-malacca-suite.html"
+  },
+  "content/Malaisie/2025-07-31-retour-a-kuala-lumpur.md": {
+    "hash": "83440868363f4ee8f55b020bcff51862",
+    "output": "site_static/malaisie/2025-07-29-retour-kuala-lumpur.html"
+  },
+  "content/Malaisie/2025-08-01-visites-a-kuala-lumpur.md": {
+    "hash": "66cf077d0240a3e6b55a58f2036fb40f",
+    "output": "site_static/malaisie/2025-08-01-visites-kuala-lumpur.html"
+  },
+  "content/Malaisie/2025-08-02-dernier-jour-a-kuala-lumpur.md": {
+    "hash": "e703832f68a64ade3a4ee5c61c44ac28",
+    "output": "site_static/malaisie/2025-08-02-dernier-jour-kuala-lumpur.html"
   },
   "content/infos/Qui-sommes-nous.md": {
     "hash": "1f273496b0ef3e998dd0913a53659d59",

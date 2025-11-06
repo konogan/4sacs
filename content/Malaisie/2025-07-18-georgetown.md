@@ -35,14 +35,25 @@ menu:
 
 11h30 nous revenons sur Georgetwon en **bateau**
 
+![2025-07-18_001.jpg](images/2025-07-18_001.jpg)
+
 12h00 bus 101 (5,60 myr) vers notre après midi **temple** , nous visitons le Chaiya Mangalaram Thai Buddhist Temple et ensuite ous
 traversons la rue pour visiter le Dhammikarama Burmese Temple, grand temple birman.
 Nous y faisons une halte pour grignoter : 2 cocas, 1 café wonda et 1 glace au chocolat (13 myr)
 
-De là, nous prenons un grab pour rejoindre le frand temple sur la colline, le funiculaire ne marche plus trop, n'est pas soit disant obligatoire, mais dans les faits il faut prendre les tickets pour monter / descendre... 3 x (4*3) = 36 myr. 
+![2025-07-18_002.jpg](images/2025-07-18_002.jpg)
+![2025-07-18_003.jpg](images/2025-07-18_003.jpg)
+![2025-07-18_004.jpg](images/2025-07-18_004.jpg)
+![2025-07-18_005.jpg](images/2025-07-18_005.jpg)
+
+De là, nous prenons un grab pour rejoindre le grand temple sur la colline, le funiculaire ne marche plus trop, n'est pas soit disant obligatoire, mais dans les faits il faut prendre les tickets pour monter / descendre... 3 x (4*3) = 36 myr. 
+
+![2025-07-18_006.jpg](images/2025-07-18_006.jpg)
+![2025-07-18_007.jpg](images/2025-07-18_007.jpg)
 
 Grab pour revenir à l'hôtel
 
 Repas au Tai Tong Restaurant, cantine locale où les plats passent sur un chariot roulant.
 
-
+![2025-07-18_008.jpg](images/2025-07-18_008.jpg)
+![2025-07-18_009.jpg](images/2025-07-18_009.jpg)

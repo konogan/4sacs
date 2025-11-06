@@ -32,7 +32,21 @@ Prenons le **train** depuis la gare de Bank Negara vers celle de Batu Caves (9,2
 
 Visite des **grottes** sur la gauche de l'entrée près de la gare (bien illuminées)
 
+![2025-07-14_001.jpg](images/2025-07-14_001.jpg)
+![2025-07-14_002.jpg](images/2025-07-14_002.jpg)
+![2025-07-14_003.jpg](images/2025-07-14_003.jpg)
+![2025-07-14_005.jpg](images/2025-07-14_005.jpg)
+
 Visite du site principal après les 270 marches
+
+![2025-07-14_006.jpg](images/2025-07-14_006.jpg)
+![2025-07-14_007.jpg](images/2025-07-14_007.jpg)
+![2025-07-14_008.jpg](images/2025-07-14_008.jpg)
+![2025-07-14_009.jpg](images/2025-07-14_009.jpg)
+![2025-07-14_010.jpg](images/2025-07-14_010.jpg)
+![2025-07-14_011.jpg](images/2025-07-14_011.jpg)
+![2025-07-14_012.jpg](images/2025-07-14_012.jpg)
+
 
 13h00 repas dans un petit restaurant indien sur le site
 
@@ -45,9 +59,16 @@ revenons en passant par chinatown. Achat d'u nsuper beignet pandam / coco. Visis
 dessiner un peu sur le carrelage ci temple. (4x 50 myr pour les chaussures). Dans le marché central situé non loin : 1
 caphé sua da (8 myr), des petites bouchées cococ pandam (7,20 myr)
 
+![2025-07-14_013.jpg](images/2025-07-14_013.jpg)
+![2025-07-14_014.jpg](images/2025-07-14_014.jpg)
+
+
 Prenons ensuite le train pour les tours Petronas (7,20 myr à 4). Après la visite du bas des tours et s'être posés un peu
 au bord du lac, nous revenons vers notre quartier à pied. Arret 7 eleven sur la route : 2 cafés glacés, 2 gateaux, 1 gds
 bouteille d'eau (20,40 myr)
+
+![2025-07-14_015.jpg](images/2025-07-14_015.jpg)
+![2025-07-14_016.jpg](images/2025-07-14_016.jpg)
 
 20h00 nous arrivons au Betel leaf pour le repas du soir.
 

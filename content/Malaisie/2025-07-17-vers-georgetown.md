@@ -39,12 +39,21 @@ menu:
 
 12h20 Arrivés dans la gare routière de **Penang**, prenons un grab pour notre hôtel situé assez loin.
 
-13h30 partons explorer les environs, Stop au family mart pour de l'eau, un corn dog, un onigiri (16myr). Visite du plus
-vieux temple chinois (Kuan Yin Temple 1880) de la ville. Pluis de la maison historique (Manoir Pinang Peranakan) (100
-myr). Pause café dans un bistro tendance, limonade et thés galcés pour 36 myr. Nous revenons ensuite à notre hôtel par
+13h30 partons explorer les environs, Stop au family mart pour de l'eau, un corn dog, un onigiri (16myr). 
+
+![2025-07-17_001.jpg](images/2025-07-17_001.jpg)
+
+Visite du plus vieux temple chinois (Kuan Yin Temple 1880) de la ville. Puis de la maison historique (Manoir Pinang Peranakan) (100 myr). 
+
+![2025-07-17_002.jpg](images/2025-07-17_002.jpg)
+![2025-07-17_003.jpg](images/2025-07-17_003.jpg)
+![2025-07-17_004.jpg](images/2025-07-17_004.jpg)
+![2025-07-17_005.jpg](images/2025-07-17_005.jpg)
+
+Pause café dans un bistro tendance, limonade et thés galcés pour 36 myr. Nous revenons ensuite à notre hôtel par
 les petites rues. Avant de faire une pause dans le café situé en contre bas 1 café et 3 thés glacés (16 myr)
 
 19h30 direction le **food court** (Red Garden Food Paradise) pour le repas du soir.
 
-
+![2025-07-17_006.jpg](images/2025-07-17_006.jpg)
 
