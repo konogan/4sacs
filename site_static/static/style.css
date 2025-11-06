@@ -370,7 +370,6 @@ body.home {
     margin-left: 0.4em;
 }
 
-
 /* === MAP === */
 .category-map {
     height: 400px;
@@ -383,11 +382,24 @@ body.home {
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
     body {
-        padding: 1.5rem;
+        padding: 1rem 0.8rem 2rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 
     h1 {
-        font-size: 1.7rem;
+        font-size: 1.4rem;
+        line-height: 1.2;
+        padding-bottom: 0.2em;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
     }
 
     .article-layout {
@@ -398,6 +410,8 @@ body.home {
     .content {
         order: 1;
         width: 100%;
+        line-height: 1.7;
+        font-size: 0.9rem;
     }
 
     aside.side {
@@ -406,6 +420,8 @@ body.home {
         flex: none;
         margin-top: 1rem;
         margin-bottom: 1rem;
+        padding: 1rem;
+        font-size: 0.85rem;
     }
 
     [id^="leaflet-map-"] {
@@ -415,13 +431,142 @@ body.home {
     }
 
     /* Ajustements pour le header sur mobile */
-    /*.article-header {*/
-    /*    flex-direction: column;*/
-    /*    align-items: flex-start;*/
-    /*    gap: 0.8em;*/
-    /*}*/
+    .article-header {
+        align-items: flex-start;
+        gap: 0.8em;
+        margin-bottom: 1.5rem;
+    }
 
     .article-header h1 {
+        font-size: 1.3rem;
         margin-top: 0.5em;
+        line-height: 1.2;
     }
+
+    .article-header .cat,
+    .article-header .cat a {
+        font-size: 1rem;
+    }
+
+    .article-header .date {
+        font-size: 0.85rem;
+    }
+
+    .article-header .sep {
+        margin-right: 0.2em;
+    }
+
+    /* Navigation entre articles */
+    .post-nav {
+        gap: 0.5rem;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    .post-nav a {
+        font-size: 0.85rem;
+    }
+
+    /* Listes */
+    li {
+        padding: 0.4em 0;
+        font-size: 0.9rem;
+    }
+
+    li em {
+        font-size: 0.8rem;
+        margin-left: 0.3em;
+    }
+
+    /* Tags */
+    .tag a {
+        font-size: 0.8rem;
+    }
+
+    .tags-cloud {
+        gap: 0.4rem 0.8rem;
+    }
+
+    .tag-cloud {
+        font-size: 0.9rem;
+    }
+
+    .count {
+        font-size: 0.75em;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 1.5rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    /* Page d'accueil */
+    .home-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .home-header .site-name {
+        font-size: 1rem;
+    }
+
+    .home-header .subtitle {
+        font-size: 0.85rem;
+    }
+
+    .home-header .logo {
+        width: 80px;
+    }
+
+    .category-list li {
+        padding: 0.5rem 0;
+    }
+
+    .category-list em {
+        font-size: 0.8rem;
+    }
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 480px) {
+    body {
+        padding: 0.8rem 0.6rem 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .article-header h1 {
+        font-size: 1.1rem;
+    }
+
+    .content {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .content img {
+        margin: 0 0 1rem 0;
+    }
+
+    aside.side {
+        padding: 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .menu-jour h3 {
+        font-size: 0.9rem;
+    }
+
+    .geo {
+        font-size: 0.8rem;
+        padding: 0.3em 0.6em;
+    }
+
+
 }

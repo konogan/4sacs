@@ -22,7 +22,7 @@ try:
 except locale.Error:
     print("⚠️ Locale fr_FR.UTF-8 non disponible, utilisation du format ISO.")
 
-# Charger les variables d’environnement (.env)
+# Charger les variables d'environnement (.env)
 load_dotenv()
 
 # === CONFIGURATION ===
@@ -175,6 +175,7 @@ def render_article(meta, content_html, categories_map):
 <html lang="fr">
 <head>
  <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>{title}</title>
  <link rel="stylesheet" href="../{CSS_URL}">
  {get_favicon_html()}
@@ -265,7 +266,7 @@ def main():
             if old_path not in new_cache and os.path.exists(old_data["output"]):
                 os.remove(old_data["output"])
                 print(f"Supprimé : {old_data['output']}")
-                
+
     # --- Pages catégories ---
     for cat, items in categories_map.items():
         cat_slug = slugify(cat)
@@ -293,6 +294,7 @@ def main():
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{cat}</title>
   <link rel="stylesheet" href="../{CSS_URL}">
   {get_favicon_html()}
@@ -341,6 +343,7 @@ def main():
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>#{tag}</title>
   <link rel="stylesheet" href="../../{CSS_URL}">
   {get_favicon_html()}
@@ -372,6 +375,7 @@ def main():
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tags</title>
   <link rel="stylesheet" href="../{CSS_URL}">
   {get_favicon_html()}
@@ -406,6 +410,7 @@ def main():
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{SITE_TITLE}</title>
   <link rel="stylesheet" href="{CSS_URL}">
   {get_favicon_html()}
